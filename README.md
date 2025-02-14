@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Task Management Application Overview This application is a Task Management System built with React and Firebase, where users can create, update, view, and manage tasks in different categories. The app is designed to help users organize their tasks, set due dates, upload files, and sort tasks based on different criteria. It also includes a user authentication system to handle login/logout.
 
-## Getting Started
+Features User Authentication:
 
-First, run the development server:
+Users can log in using their credentials. Firebase Authentication is used for secure user sign-in/sign-out. Task Management:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Users can view and manage tasks categorized into: All, Important, Completed, Due, and Incomplete. Tasks have properties like title, description, due date, file attachment, and category. File Upload:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Users can upload files associated with tasks, which are stored in Firebase Storage. Task Sorting:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tasks can be sorted by title in ascending or descending order. Batch Task Deletion:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Multiple tasks can be selected and deleted at once. Tech Stack Frontend:
 
-## Learn More
+React (with hooks) Tailwind CSS for styling Firebase for backend services (Firestore for database, Firebase Storage for file uploads, Firebase Authentication for user management) Backend:
 
-To learn more about Next.js, take a look at the following resources:
+Firebase Firestore (Database) Firebase Storage (for file handling) Components TaskList:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The main page displaying all tasks. Allows users to select a category, search tasks, sort tasks, and edit/delete tasks. Fetches task data from Firestore and displays tasks based on the selected category. Modifies task details, uploads files, and saves changes back to Firestore. Sidebar:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A sidebar to navigate between task categories such as All Tasks, Important Tasks, Completed Tasks, etc. Allows the user to filter tasks based on selected categories. TaskCard:
 
-## Deploy on Vercel
+Represents each task in the task list. Displays task title, description, due date, and file attachment (if any). Allows users to click on a task to open a modal to edit the task details. Login:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A login form for users to authenticate using their email and password. Redirects the user to the Task Management page upon successful login. How to Run Locally Clone the repository:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+bash Copy git clone cd Install dependencies:
+
+bash Copy npm install Set up Firebase:
+
+Create a Firebase project and enable Firestore and Firebase Storage. Update the firebaseConfig in firebaseConfig/firebase.js with your Firebase credentials. Run the application:
+
+bash Copy npm run dev Visit http://localhost:3000 to view the app.
+
+Firebase Setup You'll need to create a Firebase project and configure Firestore, Firebase Authentication, and Firebase Storage. Ensure that Firestore rules and Firebase Storage rules allow read and write operations based on user authentication.
+Deployment Link-Task Management Application Overview This application is a Task Management System built with React and Firebase, where users can create, update, view, and manage tasks in different categories. The app is designed to help users organize their tasks, set due dates, upload files, and sort tasks based on different criteria. It also includes a user authentication system to handle login/logout.
+
+Features User Authentication:
+
+Users can log in using their credentials. Firebase Authentication is used for secure user sign-in/sign-out. Task Management:
+
+Users can view and manage tasks categorized into: All, Important, Completed, Due, and Incomplete. Tasks have properties like title, description, due date, file attachment, and category. File Upload:
+
+Users can upload files associated with tasks, which are stored in Firebase Storage. Task Sorting:
+
+Tasks can be sorted by title in ascending or descending order. Batch Task Deletion:
+
+Multiple tasks can be selected and deleted at once. Tech Stack Frontend:
+
+React (with hooks) Tailwind CSS for styling Firebase for backend services (Firestore for database, Firebase Storage for file uploads, Firebase Authentication for user management) Backend:
+
+Firebase Firestore (Database) Firebase Storage (for file handling) Components TaskList:
+
+The main page displaying all tasks. Allows users to select a category, search tasks, sort tasks, and edit/delete tasks. Fetches task data from Firestore and displays tasks based on the selected category. Modifies task details, uploads files, and saves changes back to Firestore. Sidebar:
+
+A sidebar to navigate between task categories such as All Tasks, Important Tasks, Completed Tasks, etc. Allows the user to filter tasks based on selected categories. TaskCard:
+
+Represents each task in the task list. Displays task title, description, due date, and file attachment (if any). Allows users to click on a task to open a modal to edit the task details. Login:
+
+A login form for users to authenticate using their email and password. Redirects the user to the Task Management page upon successful login. How to Run Locally Clone the repository:
+
+bash Copy git clone cd Install dependencies:
+
+bash Copy npm install Set up Firebase:
+
+Create a Firebase project and enable Firestore and Firebase Storage. Update the firebaseConfig in firebaseConfig/firebase.js with your Firebase credentials. Run the application:
+
+bash Copy npm run dev Visit http://localhost:3000 to view the app.
+
+Firebase Setup You'll need to create a Firebase project and configure Firestore, Firebase Authentication, and Firebase Storage. Ensure that Firestore rules and Firebase Storage rules allow read and write operations based on user authentication.
+Deployment Link- https://gentle-chimera-bbffcb.netlify.app/
+
+
